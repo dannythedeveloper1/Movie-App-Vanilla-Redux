@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import MovieList from "./Components/MovieList/MovieList";
 import Nav from "./Components/Nav/Nav";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WatchList from "./Components/WatchList/WatchList";
 
 function App() {

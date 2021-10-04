@@ -13,9 +13,9 @@ const searchReducer = (state = initialState, action) => {
 		case "DETAIL":
 			return { ...state, movieDetail: action.payload };
         case "FAVS":
-            // const favsCopy = [...state.favs,action.payload];
-            // console.log(favsCopy);
-			return { ...state, favs:action.payload };
+            return { ...state, favs: action.payload };
+        case "DEL_FAVS":
+            return { ...state, favs: action.payload };
 		default:
 			return state;
 	}

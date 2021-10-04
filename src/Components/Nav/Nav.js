@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { change, darkmode, search } from "../../store/actions";
+import { Link,useHistory } from "react-router-dom";
+import { change, darkMode, search } from "../../store/actions";
 import { Button, Input } from "../../styles/Styles";
 import { searchMovieByName } from "../../utils/utils";
 import { NavContainer, Header } from "./NavStyles";
@@ -10,11 +10,13 @@ const Nav = () => {
 	const dispatch = useDispatch();
 	const theme = useSelector((state) => state.theme);
     const searchFile = useSelector((state) => state.searchReducer);
-    
+	const history = useHistory();
+
 	const handleClick = async () => {
 		const res = await searchMovieByName(searchFile.searchValue);
 		const data = res.Search;
 		dispatch(search(data));
+		history.push("./");
     };
     
 	return (
@@ -35,7 +37,7 @@ const Nav = () => {
 					onClick={(e) => {
 						e.preventDefault();
 						if (searchFile.searchValue) {
-							dispatch(darkmode());
+							dispatch(darkMode());
 							handleClick();
 						} else {
 							alert("please enter search value");

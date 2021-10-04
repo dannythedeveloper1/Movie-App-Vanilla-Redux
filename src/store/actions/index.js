@@ -1,4 +1,4 @@
-export const darkmode = () => {
+export const darkMode = () => {
     return {
         type: "DARK_MODE"
     };
@@ -43,3 +43,11 @@ export const favs = (id) => {
         payload: id
     }
 }
+
+export const delFavs = (id) => {
+    return {
+        type: 'DEL_FAVS',
+        payload: id
+    }
+}
+

@@ -15,12 +15,13 @@ const WatchList = () => {
 						<MovieCard
 							id={movie.imdbID}
 							title={movie.Title}
-							img={movie.Poster}
-						/>
+                            img={movie.Poster}
+                            btn={true}
+                        />
 					</div>
 				))}
 			</FavsContainer>
-			{isModal && <MovieDetail />}
+			{isModal && <MovieDetail btn={true}/>}
 		</FavsListContainer>
 	);
 };
