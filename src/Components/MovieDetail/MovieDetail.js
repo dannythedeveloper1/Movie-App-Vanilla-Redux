@@ -18,8 +18,7 @@ const MovieDetail = ({btn}) => {
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		const favsImdbID = [];
-		favoriteMovies.map((item) => favsImdbID.push(item.imdbID));
+		const favsImdbID = favoriteMovies.map((item) => item.imdbID);
 		if (favsImdbID.includes(singleMovie.imdbID)) {
 			alert("It already exists in Watch List!");
 		} else {

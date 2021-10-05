@@ -13,3 +13,7 @@ export const searchMovieById = (id) => {
 	return data;
 }
 
+export const nextPage = (search,page) => {
+	const data = axios.get(`${apiEndpoint}&s=${search}&p=${page}`).then((res) => res.data);
+	return data;
+};
